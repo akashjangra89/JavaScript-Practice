@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days to Christmas</title>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+
+        
+            let today = new Date()
+            let cristmas = new Date(today.getFullYear(), 11, 25)
+            let oneDay = 24*60*60*1000
+            let para = document.getElementById('para')
+            console.log(cristmas)
+            if(today.getMonth() == 11 && today.getDate() > 25){
+                cristmas.setFullYear(cristmas.getFullYear() + 1)
+            }
+            para.textContent = Math.ceil((cristmas.getTime()-today.getTime())/(oneDay))+
+            " days left until Christmas!"
+        })
+    </script>
+</head>
+<body>
+    <p id="para" style="text-align: center;"></p>
+</body>
+</html>
